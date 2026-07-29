@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titipkan Doa — Rm. Filipus Frederick Ray Popo, SJ</title>
+  <meta name="description"
+    content="Titipkan satu doa untuk Rm. Filipus Frederick Ray Popo, SJ, yang ditahbiskan imam Serikat Jesus pada 29 Juli 2026.">
+  <meta property="og:title" content="Titipkan doamu untuk Rm. Ray">
+  <meta property="og:description"
+    content="Setiap doa yang dititipkan menempatkan satu ekor lagi di bawah sayap induknya. Tahbisan Imam Serikat Jesus, 29 Juli 2026.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#EFE4CE">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────────
+   MISERICORDIAM VOLO — Ruang titipan doa
+   Halaman tunggal untuk tamu: hanya menitipkan doa.
+   Palet & tipografi sama dengan halaman utama.
+   ───────────────────────────────────────────── */
+    :root {
+      --vellum: #EFE4CE;
+      --vellum-deep: #E4D5B7;
+      --vellum-warm: #F6EEDC;
+      --sepia: #3A2C1E;
+      --sepia-soft: #6E5940;
+      --sepia-faint: #9C8A72;
+      --brick: #9B2E22;
+      --brick-deep: #6B1B14;
+      --gold: #B8862F;
+      --teal: #2C7C79;
+      --rule: rgba(58, 44, 30, .20);
+      --rule-soft: rgba(58, 44, 30, .10);
+
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "EB Garamond", Georgia, serif;
+
+      --leaf-max: 1020px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--body);
+      font-size: 19px;
+      line-height: 1.68;
+      color: var(--sepia);
+      background:
+        radial-gradient(ellipse at 50% 0%, #E8D9BC 0%, #DCC9A6 55%, #CDB68F 100%) fixed;
+      min-height: 100vh;
+      padding: 0 0 90px;
+    }
+
+    /* Serat kertas — noise halus, bukan gradasi */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .38;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='260' height='260' filter='url(%23n)' opacity='0.55'/></svg>");
+    }
+
+    /* ── Lembar kertas ── */
+    .leaf {
+      position: relative;
+      z-index: 1;
+      max-width: var(--leaf-max);
+      margin: 0 auto;
+      background: linear-gradient(178deg, var(--vellum-warm), var(--vellum) 40%, var(--vellum-deep));
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, .5) inset,
+        0 18px 50px -18px rgba(58, 44, 30, .45),
+        0 2px 6px rgba(58, 44, 30, .18);
+    }
+
+    @media (min-width:820px) {
+      .leaf {
+        margin: 34px auto;
+      }
+    }
+
+    /* ── Kepala halaman ── */
+    .runhead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 20px 30px 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sigil {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: inherit
+    }
+
+    .sigil svg {
+      width: 29px;
+      height: 29px;
+      flex: none
+    }
+
+    .sigil b {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--brick-deep);
+    }
+
+    .occasion {
+      font-family: var(--display);
+      font-size: 12.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sepia-faint);
+      text-align: right;
+    }
+
+    .btn:focus-visible,
+    textarea:focus-visible,
+    input:focus-visible,
+    .chick:focus-visible {
+      outline: 2px solid var(--brick);
+      outline-offset: 3px;
+    }
+
+    /* ── Lembar isi ── */
+    .sheet {
+      padding: 44px 30px 66px
+    }
+
+    @media (max-width:640px) {
+      .sheet {
+        padding: 32px 20px 52px
+      }
+
+      .runhead {
+        padding: 16px 20px 14px
+      }
+
+      .occasion {
+        text-align: left
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important
+      }
+    }
+
+    /* ── Tipografi ── */
+    .eyebrow {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--sepia-faint);
+      margin: 0 0 14px;
+    }
+
+    h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(1.9rem, 4.4vw, 2.9rem);
+      line-height: 1.14;
+      margin: 0 0 10px;
+      color: var(--brick-deep);
+    }
+
+    h3 {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 1.32rem;
+      letter-spacing: .02em;
+      margin: 0 0 6px
+    }
+
+    p {
+      margin: 0 0 1.05em;
+      max-width: 63ch
+    }
+
+    .lede {
+      font-size: 1.12rem;
+      color: var(--sepia-soft)
+    }
+
+    em {
+      font-style: italic
+    }
+
+    /* Aturan hairline dengan belah ketupat di tengah */
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 36px 0;
+      color: var(--rule)
+    }
+
+    .rule::before,
+    .rule::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: currentColor
+    }
+
+    .rule span {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex: none
+    }
+
+    /* Tombol */
+    .btn {
+      display: inline-block;
+      font-family: var(--display);
+      font-size: 15px;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 12px 26px;
+      cursor: pointer;
+      background: var(--brick);
+      color: var(--vellum-warm);
+      border: 1px solid var(--brick-deep);
+      border-radius: 0;
+      transition: background .2s, transform .12s;
+    }
+
+    .btn:hover {
+      background: var(--brick-deep)
+    }
+
+    .btn:active {
+      transform: translateY(1px)
+    }
+
+    .btn[disabled] {
+      opacity: .45;
+      cursor: not-allowed
+    }
+
+    .btn.ghost {
+      background: none;
+      color: var(--brick-deep);
+      border-color: var(--rule)
+    }
+
+    .btn.ghost:hover {
+      background: rgba(155, 46, 34, .07)
+    }
+
+    .btn.small {
+      font-size: 12.5px;
+      padding: 8px 16px;
+      letter-spacing: .15em
+    }
+
+    /* ── Borang titipan ── */
+    .form {
+      max-width: 56ch;
+      margin: 0 auto
+    }
+
+    .field {
+      margin-bottom: 18px
+    }
+
+    label {
+      display: block;
+      font-family: var(--display);
+      font-size: 12.5px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--sepia-soft);
+      margin-bottom: 7px;
+    }
+
+    input[type=text],
+    textarea {
+      width: 100%;
+      font-family: var(--body);
+      font-size: 18px;
+      color: var(--sepia);
+      background: rgba(255, 252, 244, .62);
+      border: 1px solid var(--rule);
+      border-radius: 0;
+      padding: 11px 13px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    input[type=text]:focus,
+    textarea:focus {
+      background: #FFFCF4;
+      border-color: var(--brick)
+    }
+
+    .count {
+      font-size: .82rem;
+      color: var(--sepia-faint);
+      text-align: right;
+      margin-top: 4px
+    }
+
+    .formrow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .notice {
+      font-size: .92rem;
+      color: var(--sepia-soft);
+      font-style: italic;
+      margin: 0
+    }
+
+    .notice.err {
+      color: var(--brick);
+      font-style: normal
+    }
+
+    /* Blok syukur setelah doa terkirim */
+    .thanks {
+      max-width: 56ch;
+      margin: 0 auto;
+      text-align: center;
+      padding: 34px 34px 30px;
+      background: rgba(255, 252, 244, .55);
+      border: 1px solid var(--rule-soft);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset;
+      animation: settle .7s cubic-bezier(.18, .9, .3, 1) both;
+    }
+
+    .thanks .seal {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 12px;
+      display: block
+    }
+
+    .thanks h3 {
+      color: var(--brick-deep);
+      margin-bottom: 10px
+    }
+
+    .thanks .msg {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      line-height: 1.5;
+      font-style: italic;
+      color: var(--sepia);
+      margin: 18px 0 10px;
+      max-width: none
+    }
+
+    .thanks .from {
+      font-family: var(--display);
+      font-size: 13px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--brick);
+      margin: 0 0 22px
+    }
+
+    /* ── Naungan ── */
+    .flockwrap {
+      position: relative;
+      margin: 8px 0 0
+    }
+
+    #flock {
+      display: block;
+      width: 100%;
+      height: auto
+    }
+
+    .chick {
+      cursor: pointer
+    }
+
+    .chick:focus {
+      outline: none
+    }
+
+    .chick .halo {
+      opacity: 0;
+      transition: opacity .18s
+    }
+
+    .chick:hover .halo,
+    .chick:focus-visible .halo,
+    .chick.sel .halo {
+      opacity: 1
+    }
+
+    .chick.arrive {
+      animation: settle .8s cubic-bezier(.18, .9, .3, 1) both
+    }
+
+    @keyframes settle {
+      from {
+        opacity: 0;
+        transform: translateY(-26px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .readout {
+      min-height: 96px;
+      margin: 6px auto 0;
+      max-width: 62ch;
+      text-align: center;
+      padding: 22px 24px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .readout .msg {
+      font-family: var(--display);
+      font-size: 1.32rem;
+      line-height: 1.5;
+      font-style: italic;
+      color: var(--sepia);
+      margin: 0 0 12px
+    }
+
+    .readout .from {
+      font-family: var(--display);
+      font-size: 13px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--brick);
+      margin: 0
+    }
+
+    .readout .when {
+      font-size: .86rem;
+      color: var(--sepia-faint);
+      margin: 4px 0 0
+    }
+
+    .readout .hint {
+      color: var(--sepia-faint);
+      font-style: italic;
+      margin: 0
+    }
+
+    footer {
+      max-width: var(--leaf-max);
+      margin: 22px auto 0;
+      padding: 0 30px;
+      text-align: center;
+      font-size: .86rem;
+      color: var(--sepia-soft);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer em {
+      color: var(--brick-deep)
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="leaf">
+
+    <header class="runhead">
+      <div class="sigil">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18.2" fill="none" stroke="#9B2E22" stroke-width="1.1" />
+          <path d="M20 6 L20 34 M6 20 L34 20" stroke="#B8862F" stroke-width=".8" opacity=".55" />
+          <text x="20" y="26" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" fill="#6B1B14"
+            letter-spacing="1">IHS</text>
+        </svg>
+        <b>Misericordiam&nbsp;Volo</b>
+      </div>
+      <p class="occasion">Tahbisan Imam Serikat Jesus<br>29 Juli 2026</p>
+    </header>
+
+    <main class="sheet">
+
+      <p class="eyebrow">Ruang Titipan Doa</p>
+      <h2>Sub Umbra Alarum</h2>
+      <p class="lede">“Berapa kali Aku rindu mengumpulkan anak-anakmu, seperti induk ayam mengumpulkan anak-anaknya di
+        bawah sayapnya.” — Matius 23:37</p>
+      <p>Halaman ini disediakan untuk satu hal saja: menitipkan doa bagi <strong>Rm. Filipus Frederick Ray Popo,
+          SJ</strong>. Setiap doa yang masuk menempatkan satu ekor lagi di bawah sayap induknya.</p>
+
+      <div class="rule"><span></span></div>
+
+      <!-- ── borang ── -->
+      <div class="form" id="form">
+        <h3>Titipkan doamu</h3>
+        <p class="notice" style="margin-bottom:20px">Yang kamu tulis akan terbaca oleh Rm. Ray dan siapa pun yang
+          membuka halaman ini.</p>
+        <div class="field">
+          <label for="nm">Nama</label>
+          <input type="text" id="nm" maxlength="60" placeholder="Nama, atau nama dan asal komunitas"
+            autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="ms">Doa atau pesan</label>
+          <textarea id="ms" maxlength="400" rows="4"
+            placeholder="Satu doa, satu kenangan, satu kalimat yang ingin dia bawa."></textarea>
+          <p class="count"><span id="cc">0</span> / 400</p>
+        </div>
+        <div class="formrow">
+          <button class="btn" id="send">Titipkan</button>
+          <p class="notice" id="fmsg" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <!-- ── blok syukur, muncul setelah terkirim ── -->
+      <div class="thanks" id="thanks" hidden>
+        <svg class="seal" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18.2" fill="none" stroke="#9B2E22" stroke-width="1.1" />
+          <path d="M12 20.5 l5.5 5.5 L28 15" fill="none" stroke="#2C7C79" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <h3>Doamu sudah dititipkan</h3>
+        <p class="notice">Satu ekor lagi berteduh di bawah sayap itu. Terima kasih.</p>
+        <p class="msg" id="tmsg"></p>
+        <p class="from" id="tfrom"></p>
+        <button class="btn ghost small" id="again">Titipkan doa lain</button>
+      </div>
+
+      <div class="rule"><span></span></div>
+
+      <!-- ── naungan ── -->
+      <p class="eyebrow" style="text-align:center">Yang sudah berteduh</p>
+
+      <div class="flockwrap">
+        <svg id="flock" viewBox="0 0 900 620" role="img"
+          aria-label="Induk ayam menaungi anak-anaknya; setiap anak ayam mewakili satu doa.">
+          <defs>
+            <radialGradient id="sung" cx=".5" cy=".5" r=".5">
+              <stop offset="0%" stop-color="#E8B84B" />
+              <stop offset="100%" stop-color="#B8862F" />
+            </radialGradient>
+          </defs>
+
+          <!-- gapura -->
+          <path id="arch1" d="M64 600 V232 A386 190 0 0 1 836 232 V600" fill="none" stroke="#9B2E22"
+            stroke-width="2.2" />
+          <path id="arch2" d="M82 600 V236 A368 176 0 0 1 818 236 V600" fill="none" stroke="#9B2E22" stroke-width=".8"
+            opacity=".45" />
+
+          <!-- matahari -->
+          <g id="sun">
+            <circle cx="450" cy="108" r="21" fill="url(#sung)" />
+            <g stroke="#B8862F" stroke-width="1.4" opacity=".8" id="rays"></g>
+          </g>
+
+          <!-- motto pada timpanum -->
+          <text x="450" y="166" text-anchor="middle" fill="#9B2E22" font-family="Cormorant Garamond, serif"
+            font-size="25" font-weight="500" letter-spacing="7">MISERICORDIAM VOLO</text>
+          <text x="450" y="192" text-anchor="middle" fill="#9C8A72" font-family="EB Garamond, serif" font-size="15"
+            font-style="italic">Matius 12:7</text>
+
+          <!-- sayap naungan -->
+          <g id="wings" fill="none" stroke="#9B2E22" stroke-width="1.5" opacity=".62"></g>
+
+          <!-- induk ayam -->
+          <g id="hen" stroke="#6B1B14" stroke-width="2" fill="#C9642F" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M418 268 C398 254 392 232 402 216 C408 236 416 244 424 248" fill="#9B2E22" />
+            <ellipse cx="452" cy="252" rx="46" ry="34" />
+            <path d="M424 246 C438 236 458 236 470 246 C462 258 440 260 424 246Z" fill="#9B2E22" opacity=".85" />
+            <circle cx="491" cy="219" r="16" fill="#C9642F" />
+            <path d="M484 204 c3-8 6-4 7-9 c3 7 7 3 8 9" fill="#9B2E22" stroke="#6B1B14" stroke-width="1.6" />
+            <path d="M506 220 l13 5 l-13 5Z" fill="#B8862F" stroke="#6B1B14" stroke-width="1.4" />
+            <circle cx="495" cy="216" r="2.4" fill="#3A2C1E" stroke="none" />
+            <path d="M488 236 c1 6 -2 10 -5 12" stroke-width="1.6" />
+          </g>
+
+          <!-- anak ayam -->
+          <g id="chicks"></g>
+        </svg>
+      </div>
+
+      <div class="readout" id="readout" aria-live="polite">
+        <p class="hint" id="hint">Memuat…</p>
+      </div>
+
+    </main>
+  </div>
+
+  <footer>
+    <p><em>Ad Maiorem Dei Gloriam</em> &nbsp;·&nbsp; 29 Juli 2026</p>
+  </footer>
+
+  <script>
+    /* ═══════════════════════════════════════════════════════
+       Sumber data sama dengan halaman utama: tabel `berkat`.
+       SUPABASE_URL berisi URL proyek saja — jalur /rest/v1
+       ditambahkan di bawah, jangan ikut ditulis di sini.
+       ═══════════════════════════════════════════════════════ */
+    const SUPABASE_URL = "https://nfdnfficbkswwkmrnfik.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_zf663kuv-Z6hq6BkeXWuCA_4UlX3zDw";
+    const REST = `${SUPABASE_URL}/rest/v1/berkat`;
+    const HEAD = { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY };
+
+    const esc = s => String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    const el = id => document.getElementById(id);
+
+    /* ═══════════ NAUNGAN ═══════════ */
+    const CX = 450, CY = 252;
+    const R0 = 170, RSTEP = 54, HALF = 334;   // HALF = batas kiri-kanan, tetap di dalam gapura
+    let doa = [];
+
+    /* sinar matahari */
+    (function () {
+      let s = '';
+      for (let i = 0; i < 16; i++) {
+        const a = i * Math.PI / 8;
+        s += `<line x1="${450 + Math.cos(a) * 27}" y1="${108 + Math.sin(a) * 27}" x2="${450 + Math.cos(a) * (i % 2 ? 36 : 43)}" y2="${108 + Math.sin(a) * (i % 2 ? 36 : 43)}"/>`;
+      }
+      el('rays').innerHTML = s;
+    })();
+
+    /* sayap terbuka: tiga lapis busur di kiri dan kanan induk */
+    (function () {
+      let s = '';
+      for (let k = 0; k < 3; k++) {
+        const d = 15 * k, o = (.75 - k * .19).toFixed(2);
+        s += `<path opacity="${o}" d="M ${CX - 27} ${CY - 8 - d * .3} C ${CX - 124} ${CY + 8 - d} ${CX - 180 - d} ${CY + 84} ${CX - 190 - d} ${CY + 164 + d}"/>`;
+        s += `<path opacity="${o}" d="M ${CX + 27} ${CY - 8 - d * .3} C ${CX + 124} ${CY + 8 - d} ${CX + 180 + d} ${CY + 84} ${CX + 190 + d} ${CY + 164 + d}"/>`;
+      }
+      el('wings').innerHTML = s;
+    })();
+
+    const perRing = k => 9 + k * 3;
+
+    function posisi(i) {
+      let n = i, ring = 0, cap = perRing(0);
+      while (n >= cap) { n -= cap; ring++; cap = perRing(ring); }
+      const r = R0 + ring * RSTEP;
+      const a0 = r > HALF ? Math.acos(HALF / r) * 180 / Math.PI : 24;
+      const a1 = 180 - a0;
+      const t = cap === 1 ? .5 : n / (cap - 1);
+      const a = (a0 + t * (a1 - a0)) * Math.PI / 180;
+      return { x: CX + r * Math.cos(a), y: CY + r * Math.sin(a), s: Math.max(.55, 1 - ring * .06), ring };
+    }
+
+    function chickSVG(p, i, baru) {
+      const c = ['#C9642F', '#D98B33', '#B8862F', '#C97B3A'][i % 4];
+      return `<g class="chick${baru ? ' arrive' : ''}" tabindex="0" role="button" data-i="${i}"
+            transform="translate(${p.x.toFixed(1)},${p.y.toFixed(1)}) scale(${p.s.toFixed(2)})"
+            aria-label="Doa dari ${esc(doa[i].nama)}">
+      <circle r="36" fill="transparent"/>
+      <circle class="halo" r="29" fill="#B8862F" opacity=".18"/>
+      <ellipse cx="0" cy="2" rx="15" ry="13" fill="${c}" stroke="#6B1B14" stroke-width="1.6"/>
+      <circle cx="9" cy="-11" r="9.5" fill="${c}" stroke="#6B1B14" stroke-width="1.6"/>
+      <path d="M17 -11 l8 3 l-8 3Z" fill="#B8862F" stroke="#6B1B14" stroke-width="1.2"/>
+      <circle cx="11" cy="-13" r="1.7" fill="#3A2C1E"/>
+      <path d="M-13 -2 c4 -5 10 -5 13 -1" fill="none" stroke="#6B1B14" stroke-width="1.3" opacity=".7"/>
+      <line x1="-4" y1="14" x2="-6" y2="19" stroke="#6B1B14" stroke-width="1.4"/>
+      <line x1="4" y1="14" x2="6" y2="19" stroke="#6B1B14" stroke-width="1.4"/>
+    </g>`;
+    }
+
+    function gambar(baruIdx) {
+      const g = el('chicks');
+      g.innerHTML = doa.map((d, i) => chickSVG(posisi(i), i, i === baruIdx)).join('');
+      g.querySelectorAll('.chick').forEach(node => {
+        node.addEventListener('click', () => baca(+node.dataset.i));
+        node.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); baca(+node.dataset.i); }
+        });
+      });
+
+      // gapura & bingkai ikut tumbuh saat kawanan bertambah
+      let bawah = 600;
+      for (let i = 0; i < doa.length; i++) bawah = Math.max(bawah, posisi(i).y + 58);
+      bawah = Math.round(bawah);
+      el('arch1').setAttribute('d', `M64 ${bawah + 22} V232 A386 190 0 0 1 836 232 V${bawah + 22}`);
+      el('arch2').setAttribute('d', `M82 ${bawah + 22} V236 A368 176 0 0 1 818 236 V${bawah + 22}`);
+      el('flock').setAttribute('viewBox', `0 0 900 ${bawah + 30}`);
+    }
+
+    function baca(i) {
+      document.querySelectorAll('.chick').forEach(node => node.classList.toggle('sel', +node.dataset.i === i));
+      const d = doa[i];
+      const t = d.created_at ? new Date(d.created_at) : null;
+      el('readout').innerHTML =
+        `<p class="msg">“${esc(d.pesan)}”</p>
+     <p class="from">${esc(d.nama)}</p>
+     ${t ? `<p class="when">${t.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</p>` : ''}`;
+    }
+
+    function kabar(teks) {
+      el('readout').innerHTML = `<p class="hint">${esc(teks)}</p>`;
+    }
+
+    async function muat() {
+      try {
+        const r = await fetch(`${REST}?select=nama,pesan,created_at&order=created_at.asc`, { headers: HEAD });
+        if (!r.ok) throw new Error(r.status + ' ' + await r.text());
+        doa = await r.json();
+      } catch (e) {
+        console.error('[berkat] gagal muat:', e);
+        doa = [];
+        gambar();
+        kabar('Daftar doa belum bisa dimuat sekarang. Kamu tetap bisa menitipkan doamu di atas.');
+        return;
+      }
+      gambar();
+      kabar(doa.length
+        ? `${doa.length} doa sudah dititipkan. Klik satu ekor untuk membacanya.`
+        : 'Belum ada yang berteduh di sini. Jadilah yang pertama.');
+    }
+
+    /* ═══════════ TITIPKAN ═══════════ */
+    let mengirim = false;
+
+    async function kirim() {
+      if (mengirim) return;
+      const nm = el('nm'), ms = el('ms'), f = el('fmsg'), b = el('send');
+      const nama = nm.value.trim(), pesan = ms.value.trim();
+
+      f.className = 'notice';
+      if (nama.length < 2) { f.className = 'notice err'; f.textContent = 'Tulis namamu dulu.'; nm.focus(); return; }
+      if (pesan.length < 3) { f.className = 'notice err'; f.textContent = 'Pesannya masih kosong.'; ms.focus(); return; }
+
+      mengirim = true; b.disabled = true; f.textContent = 'Mengirim…';
+
+      try {
+        const r = await fetch(REST, {
+          method: 'POST',
+          headers: { ...HEAD, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+          body: JSON.stringify({ nama, pesan })
+        });
+        if (!r.ok) throw new Error(r.status + ' ' + await r.text());
+      } catch (e) {
+        console.error('[berkat] gagal kirim:', e);
+        mengirim = false; b.disabled = false;
+        f.className = 'notice err';
+        f.textContent = 'Gagal terkirim. Coba lagi sebentar lagi.';
+        return;
+      }
+
+      // tampilkan blok syukur, dan tempatkan ekor baru di bawah sayap
+      el('tmsg').textContent = '“' + pesan + '”';
+      el('tfrom').textContent = nama;
+      el('form').hidden = true;
+      el('thanks').hidden = false;
+
+      doa.push({ nama, pesan, created_at: new Date().toISOString() });
+      gambar(doa.length - 1);
+      baca(doa.length - 1);
+
+      nm.value = ''; ms.value = ''; el('cc').textContent = '0';
+      f.textContent = ''; b.disabled = false; mengirim = false;
+      el('thanks').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    el('ms').addEventListener('input', e => { el('cc').textContent = e.target.value.length; });
+    el('send').addEventListener('click', kirim);
+    el('again').addEventListener('click', () => {
+      el('thanks').hidden = true;
+      el('form').hidden = false;
+      el('nm').focus();
+      el('form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    muat();
+  </script>
+</body>
+
+</html>

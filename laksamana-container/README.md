@@ -1,9 +1,11 @@
 # PT. Laksamana Container International — Landing Page
 
 Satu berkas `index.html` tanpa dependensi dan tanpa proses build. Desain dan palet
-warna mengikuti identitas grup Laksamana (biru korporat `#1B3FA5`, merah aksen
+warna halaman mengikuti identitas grup Laksamana (biru korporat `#1B3FA5`, merah aksen
 `#EF3E33`, putih), agar sejalan dengan situs
 [PT. Laksamana Chaidir Indonesia](https://www.laksamanachaidirindonesia.com/).
+Lambang perusahaan digambar sebagai SVG sebaris — tiga lapisan bertumpuk
+(kuning `#E9A825`, hijau `#4CAF50`, biru `#2C82C9` dengan mata panah).
 
 ## Bagian halaman
 
@@ -13,11 +15,12 @@ Kontak (formulir → WhatsApp) · CTA · Footer.
 
 ## Yang perlu diganti sebelum tayang
 
-Semua ditandai dengan komentar `<!-- TODO -->` di dalam berkas:
+Nomor WhatsApp resmi sudah terpasang: **+62 812-8579-4886** (`6281285794886`, dipakai di
+konstanta `WA_NUMBER`, tautan `wa.me`, footer, dan JSON-LD). Sisanya masih sementara dan
+ditandai komentar `<!-- TODO -->` di dalam berkas:
 
 | Isi | Nilai sementara |
 | --- | --- |
-| Nomor WhatsApp (`WA_NUMBER` di `<script>`, tautan `wa.me`, footer) | `6281200000000` |
 | Surel | `info@laksamanacontainer.co.id` |
 | Alamat kantor & depo | "Kawasan Pelabuhan Tanjung Priok, Jakarta Utara 14310" |
 | Peta lokasi | kotak kosong — ganti dengan `<iframe>` Google Maps |
